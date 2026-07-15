@@ -1,0 +1,111 @@
+/* =========================
+   GLOBAL UI STYLE
+========================= */
+
+body {
+    font-family: 'Inter', sans-serif;
+}
+
+/* =========================
+   GLASS PANEL (INDEX HERO)
+========================= */
+.glass-panel {
+    background: rgba(255,255,255,0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    border-radius: 16px;
+}
+
+/* =========================
+   TEXT GRADIENT BLUE (MAIN BRAND)
+========================= */
+.text-gradient {
+    background: linear-gradient(135deg, #00346f, #006782);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* =========================
+   DARK GRADIENT TEXT (TERMS SUBTITLE)
+========================= */
+.text-gradient-dark {
+    background: linear-gradient(90deg, #000000, #444444);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+/* =========================
+   BUTTON GRADIENT PRIMARY
+========================= */
+.btn-gradient {
+    background: linear-gradient(135deg, #006782, #004c5f);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 999px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* =========================
+   CARD ANIMATION
+========================= */
+.card {
+    transition: all 0.3s ease;
+    border-radius: 14px;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+}
+
+/* =========================
+   HERO IMAGE ZOOM EFFECT
+========================= */
+.hero-img {
+    transition: transform 6s ease;
+}
+
+.hero-img:hover {
+    transform: scale(1.05);
+}
+
+/* =========================
+   QUIZ OPTION HOVER
+========================= */
+.quiz-option {
+    transition: all 0.2s ease;
+}
+
+.quiz-option:hover {
+    background-color: #f3f4f6;
+}
+
+/* =========================
+   MODAL SHADOW IMPROVE
+========================= */
+#termModal > div {
+    animation: pop 0.25s ease;
+}
+
+@keyframes pop {
+    from {
+        transform: scale(0.95);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
