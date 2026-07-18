@@ -1,88 +1,107 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="ms">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Istilah Sains - Istilah Sains-AI</title>
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md">
+  <body
+    class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md"
+  >
+    <!-- 🔹 NAVBAR -->
+    <nav
+      class="sticky top-0 z-50 flex items-center justify-between px-6 h-20 bg-white/80 backdrop-blur-md border-b shadow-sm"
+    >
+      <a class="text-2xl font-bold text-gradient" href="index.html"
+        >Istilah Sains-AI</a
+      >
 
-<!-- 🔹 NAVBAR -->
-<nav class="sticky top-0 z-50 flex items-center justify-between px-6 h-20 bg-white/80 backdrop-blur-md border-b shadow-sm">
-    <div class="flex items-center gap-8">
-        <a class="text-2xl font-bold text-gradient" href="index.html">Istilah Sains-AI</a>
-
-        <div class="hidden md:flex gap-6">
-            <a class="btn-gradient" href="terms.html">Istilah Sains</a>
-            <a class="text-gray-600 hover:text-primary font-semibold" href="quiz.html">Kuiz</a>
+      <div class="flex items-center gap-8">
+        <div class="hidden md:flex items-center gap-6">
+          <a class="btn-gradient" href="terms.html">Istilah Sains</a>
+          <a
+            class="text-gray-600 hover:text-primary font-semibold"
+            href="quiz.html"
+            >Kuiz</a
+          >
         </div>
-    </div>
+      </div>
 
-    <input id="searchInput"
-           class="hidden sm:block px-4 py-2 border rounded-full w-64"
-           placeholder="Cari istilah...">
-</nav>
+      <input
+        id="searchInput"
+        class="hidden sm:block px-4 py-2 border rounded-full w-64"
+        placeholder="Cari istilah..."
+      />
+    </nav>
 
-<!-- 🔹 HEADER -->
-<main class="flex-grow px-6 py-10 max-w-6xl mx-auto">
-
-    <section class="mb-8 border-b pb-4">
-        <h1 class="text-3xl md:text-4xl font-bold text-on-surface mb-2">
+    <!-- 🔹 HEADER -->
+    <main class="flex-grow px-6 py-10 max-w-6xl mx-auto w-full">
+      <section class="mb-8 border-b pb-4 flex flex-row w-full">
+        <div class="w-full">
+          <h1 class="text-3xl md:text-4xl font-bold text-on-surface mb-2">
             Istilah Sains
-        </h1>
+          </h1>
 
-        <p class="text-gradient-dark text-lg font-semibold">
+          <p class="text-gradient-dark text-lg font-semibold">
             Klik kad untuk melihat penerangan setiap istilah.
-        </p>
+          </p>
+        </div>
 
         <div class="flex justify-end mt-3">
-            <a href="index.html" class="btn-gradient">
-                ← Kembali
-            </a>
+          <a href="index.html" class="btn-gradient w-full"> ←Kembali </a>
         </div>
-    </section>
+      </section>
 
-    <!-- 🔹 TERMS -->
-    <section>
-        <div id="term-container" class="grid grid-cols-1 md:grid-cols-3 gap-6"></div>
-    </section>
+      <!-- 🔹 TERMS -->
+      <section>
+        <div
+          id="term-container"
+          class="grid grid-cols-1 md:grid-cols-3 gap-6"
+        ></div>
+      </section>
+    </main>
 
-</main>
-
-<!-- 🔹 MODAL -->
-<div id="termModal" class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50">
-    <div class="bg-white rounded-2xl max-w-xl w-full overflow-hidden shadow-xl">
-
-        <img id="modalImage" class="w-full h-64 object-cover">
+    <!-- 🔹 MODAL -->
+    <div
+      id="termModal"
+      class="hidden fixed inset-0 bg-black/60 flex items-center justify-center p-4 z-50"
+    >
+      <div
+        class="bg-white rounded-2xl max-w-xl w-full overflow-hidden shadow-xl"
+      >
+        <img id="modalImage" class="w-full h-64 object-cover" />
 
         <div class="p-6">
-            <h2 id="modalTitle" class="text-2xl font-bold text-primary mb-3"></h2>
-            <p id="modalDescription" class="text-gray-700"></p>
+          <h2 id="modalTitle" class="text-2xl font-bold text-primary mb-3"></h2>
+          <p id="modalDescription" class="text-gray-700"></p>
 
-            <button onclick="closeModal()" class="btn-gradient mt-6">
-                Tutup
-            </button>
+          <button onclick="closeModal()" class="btn-gradient mt-6">
+            Tutup
+          </button>
         </div>
-
+      </div>
     </div>
-</div>
 
-<script src="terms.js"></script>
-<script src="script.js"></script>
+    <script src="terms.js"></script>
+    <script src="script.js"></script>
 
-
-<script>
-    document.addEventListener("DOMContentLoaded", () => {
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
         console.log("LOAD TERMS");
         console.log(scienceTerms);
-    });
-</script>
-
-</body>
+      });
+    </script>
+  </body>
 </html>
