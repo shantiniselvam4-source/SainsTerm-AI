@@ -32,21 +32,33 @@
 
   <body class="bg-gray-50 flex flex-col min-h-screen">
     <!-- NAV -->
-    <nav class="flex justify-between items-center px-6 h-20 bg-white shadow-sm">
-      <a href="index.html" class="text-xl font-bold text-gradient"
+     <nav
+      class="sticky top-0 z-50 flex items-center justify-between px-6 h-20 bg-white/80 backdrop-blur-md border-b shadow-sm"
+    >
+      <a class="text-2xl font-bold text-gradient" href="index.html"
         >Istilah Sains-AI</a
       >
 
-      <div class="flex gap-6">
-        <a href="terms.html" class="text-gray-600 hover:text-primary"
-          >Istilah</a
-        >
-        <a
-          href="quiz.html"
-          class="text-primary font-semibold border-b-2 border-primary"
-          >Kuiz</a
-        >
+      <div class="flex items-center gap-8">
+        <div class="hidden md:flex items-center gap-6">
+          <a
+            class="text-gray-600 hover:text-primary font-semibold"
+            href="terms.html"
+            >Istilah Sains</a
+          >
+          <a
+            class="btn-gradient"
+            href="quiz.html"
+            >Kuiz</a
+          >
+        </div>
       </div>
+
+      <input
+        id="searchInput"
+        class="hidden sm:block px-4 py-2 border rounded-full w-64"
+        placeholder="Cari istilah..."
+      />
     </nav>
 
     <!-- MAIN -->
