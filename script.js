@@ -192,11 +192,16 @@ function nextQuestion() {
 
 // ===================== FINAL =====================
 function showFinal() {
-    document.getElementById("question").innerText = "Quiz Tamat 🎉";
-    document.getElementById("options").innerHTML = "";
+  document.getElementById("question").innerText = "Quiz Tamat 🎉";
+  document.getElementById("options").innerHTML = "";
+  const nextButton = document.getElementById("nextButton");
+  const endButton = document.getElementById("endButton");
 
-    document.getElementById("result").innerHTML =
-        `Skor anda: ${score} / ${quizData.length}`;
+  nextButton.classList.add("hidden");
+  endButton.classList.remove("hidden");
 
-    document.getElementById("progressBar").style.width = "100%";
+  document.getElementById("result").innerHTML =
+    `Skor anda: ${score} / ${quizData.length}`;
+
+  document.getElementById("progressBar").style.width = "100%";
 }
